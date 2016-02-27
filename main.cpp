@@ -75,7 +75,8 @@ int main(){
 }
 
 //prints out values for the board
-void show_board(vector<Square*> &s){
+void show_board(vector<Square*> &s)
+{
 	for(int i=1; i<10; i++){
 		s[i]->print();
 		if(!(i%3)){cout << "\n__|___|___|\n";}
@@ -83,7 +84,8 @@ void show_board(vector<Square*> &s){
 }
 
 //pushes in initial values for squares
-vector<Square*> set_up_board(){
+vector<Square*> set_up_board()
+{
 	vector<Square*> v;
 	v.push_back(NULL);
 	for(int i=1; i<10; i++){
@@ -172,7 +174,8 @@ bool play_game_mfirst(vector<Square*> &s)
 }
 
 //allows computer to generate moves 
-int move_gen(vector<Square*> &s){
+int move_gen(vector<Square*> &s)
+{
 	int x;
 	cin >> x ;
 	return x;
