@@ -1,6 +1,5 @@
 /**
 	Author: Ahsan Zaman
-	email: ahsanzam@usc.edu
  **/
 #include <iostream> 
 #include <string>
@@ -188,7 +187,6 @@ int move_gen(vector<Square*> &s, int &state)
 }
 //allows computer to generate moves for move after first
 int move_gen(vector<Square*> &s){
-	//after first move
 	if(s[1]->val()==s[2]->val() && s[3]->val()>0) return 3; //1
 	if(s[4]->val()==s[5]->val() && s[6]->val()>0) return 6; //2
 	if(s[7]->val()==s[8]->val() && s[9]->val()>0) return 9; //3
@@ -210,19 +208,8 @@ int move_gen(vector<Square*> &s){
 	if(s[2]->val()==s[8]->val() && s[5]->val()>0) return 5; //19
 	if(s[3]->val()==s[9]->val() && s[6]->val()>0) return 6; //20
 	else{
-		cout << "MISSED ONE!" << endl;
-		return 2;
+		for(int i=0; i<10; i++){if(s[i]->val()>0) return i;}
 	}
-
-
-
-	/*if(s[1]->val()==s[5]->val() && s[9]->val()!=O) return 9; //13
-	if(s[1]->val()==s[5]->val() && s[9]->val()!=O) return 9; //14
-	if(s[1]->val()==s[5]->val() && s[9]->val()!=O) return 9; //15
-	if(s[1]->val()==s[5]->val() && s[9]->val()!=O) return 9; //16
-	if(s[1]->val()==s[5]->val() && s[9]->val()!=O) return 9; //17
-	*/
-
 }
 
 //checks for end state
