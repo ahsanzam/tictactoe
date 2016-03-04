@@ -208,8 +208,10 @@ int move_gen(vector<Square*> &s){
 	if(s[2]->val()==s[8]->val() && s[5]->val()>0) return 5; //19
 	if(s[3]->val()==s[9]->val() && s[6]->val()>0) return 6; //20
 	else{
-		for(int i=0; i<10; i++){if(s[i]->val()>0) return i;}
+		for(int i=1; i<10; i++){if(s[i]->val()>0) return i;}
 	}
+	cout << "ERROR!" << endl;
+	return -1; //error code
 }
 
 //checks for end state
