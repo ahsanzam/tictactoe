@@ -127,8 +127,7 @@ bool play_game_pfirst(vector<Square*> &s)
 			cout << "I pick square "<< index << endl;
 			s[index]->set_val(O);
 			show_board(s);
-			if(check_win(s) != 0) 
-				at_end = true;
+			if(check_win(s) != 0) at_end = true;
 		}
 		state++;
 	}
@@ -151,8 +150,7 @@ bool play_game_mfirst(vector<Square*> &s)
 		cout << "I pick square "<< index << endl;
 		s[index]->set_val(O);
 		show_board(s);
-		if(check_win(s) != 0) 
-			at_end = true;
+		if(check_win(s) != 0) at_end = true;
 		state++; 
 
 		//player's turn
