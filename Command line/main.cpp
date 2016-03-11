@@ -68,7 +68,7 @@ int main(){
 		else
 			cout << "Congratulations, you've won!\n" ;
 	}
-	for(unsigned int i=1; i<squares.size(); i++){
+	for(int i=1; i<squares.size(); i++){
 		delete squares[i];
 	}
 	return 0;
@@ -205,9 +205,9 @@ int move_gen(vector<Square*> &s){
 	if(s[1]->val()==s[7]->val() && s[4]->val()>0) return 4; //18
 	if(s[2]->val()==s[8]->val() && s[5]->val()>0) return 5; //19
 	if(s[3]->val()==s[9]->val() && s[6]->val()>0) return 6; //20
-	else
-		for(unsigned int i=1; i<10; i++) if(s[i]->val()>0) 
-			return i;
+	else{
+		for(int i=1; i<10; i++){if(s[i]->val()>0) return i;}
+	}
 	cout << "ERROR!" << endl;
 	return -1; //error code
 }
@@ -242,7 +242,7 @@ bool is_error(int input, vector<Square*> &s)
 //checks whether an input string is a number 
 bool is_number(string input)
 {
-	for(unsigned int i=0; i<input.size(); i++){
+	for(int i=0; i<input.size(); i++){
 		if(input[i] < '1' || input[i]>'9') return false;
 	}
 	return true; 
